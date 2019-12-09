@@ -20,6 +20,12 @@ export enum RubricsActionTypes {
     SetPageTitle = 'Set Page Title',
     ConnectionMade = 'Connection Made',
     ConnectionLost = 'Connection Lost',
+    SearchRubricAction = 'Get Search Results'
+}
+
+export class SearchRubricAction implements Action {
+    public readonly type = RubricsActionTypes.SearchRubricAction;
+    constructor(public payload?: string) {}
 }
 
 export class GetRubric implements Action {
@@ -118,4 +124,6 @@ export type RubricsActionsUnion =
     | CreateRubricError
     | SetPageTitle
     | ConnectionMade
-    | ConnectionLost;
+    | ConnectionLost
+    | SearchRubricAction;
+    
